@@ -1,0 +1,111 @@
+key,en,kor,class
+additional2,8. Additional Analysis 2,8. 추가분석 선택 2,output
+doPreprocessing,Do preprocessing,데이타 전처리하기,Checkbox
+baujattext,baujat plot option,baujat plot 옵션,Text
+bg,background color of point,점 배경색,Select
+foresttext,Other Options,기타 옵션,Numeric
+radio,Select data,예제 데이타 선택,Radio
+Title1,<h1>Learn ggplot2 by web-r.org</h1>,<h1>웹 R : ggplot2 배우기</h1>,html2
+introduction,Make plot with `ggplot2` package of R. Please select data and variables for draw plot. You can download plot(s) as a `pdf` or `png` format. You can make multiplot. You can download unto 10 plots as a `powerpoint file` with or without R code.,"`ggplot2` 패키지를 사용하여 여러가지 plot을 그립니다. `데이타`와 그림에 사용할 `변수들을` 선택하여 plot을 그릴 수 있습니다. 최대 4개의 그림을 이용하여 `multiplot`을 그릴 수 있습니다. 완성된 plot은 `pdf`,`png`형식으로 다운로드 가능할 뿐만 아니라 10개의 plot까지 하나의 `파워포인트 파일`로 다운로드 할 수 있습니다.",html2
+language,Select Language,언어 선택,Radio
+intro1,`Select` a sample data or `upload` your data. Allowed format is *.csv or *.xlsx(`*.csv` format is preferred).,`데이타를 선택`하시거나 자료를 `업로드` 하세요.  xlsx 또는 csv화일을 읽을 수 있읍니다.,html2
+resetVar,Reset Variables/Options,변수/옵션 초기화,html
+intro2,Please press `Reset Variables/Options` button before select a sample data.,`예제 데이타를 선택`하시기 전 꼭 `변수/옵션초기화`를 누르세요.,html2
+file,"Upload data(*.xlsx,*.csv)","자료 업로드(*.xlsx,*.csv)",html
+mydata,Enter the name of data,사용할 데이타를 입력하세요,Text
+example,Example gallery,예제 갤러리,Select
+PreProcessingExample,Select data preprocessing,데이터 전처리 선택,Select
+showtable,always show data tables,자료테이블 항상 보이기,Checkbox
+clearPreprocessing,Reset preprocessing,전처리 초기화,html
+goback,Undo preprocessing,전단계로 돌아가기,html
+gohome,Reset preprocessing,처음으로 돌아가기,html
+sortvar1,sort by column1,정렬기준열1,Select
+sortvar2,sort by column2,정렬기준열2,Select
+sort,Sort by column ,정렬하기,html
+desc1,descending order,내림차순,html
+desc2,descending order,내림차순,html
+filtercondition,Filtering condition,자료 필터 조건 입력,Text
+filter,Apply Filter,필터적용,html
+selectcol,Columns to be selected,선택할 열(들),Select
+select,Select column(s),열중 일부만 선택,html
+intro3,"You can grouping data by the rank of continuous variable into k-groups. For example, if you want to make new ordinal variable `agegroup` by the rank of age into 4 groups, select `age` as a criteria variable, enter age group as a new variable name, enter 4 as the number of new groups and press the `Grouping into k-groups`button.",연속형 변수를 기준으로 순위를 정하고 임의의 k개의 구간으로 나누어줍니다. 예를 들어 age를 기준으로 4개의 그룹으로 나누어 새로운 변수 agegroup에 저장하고 싶은 경우 기준변수에 age를 선택하고 구간수에 4를 입력하고 새로운 변수 이름에 agegroup을 입력후 `k개의 구간으로 나누기`를 선택하세요.,html2
+assignvar,<h4>Assign Variable</h4>,<h4>변수할당</h4>,html2
+xvar,x-axis variable,x축 변수 선택:,Select
+factorxvar,treat as factor,범주형변수로 취급,Checkbox
+reorderx,sort by y-axis variable,y축변수순 정렬,Checkbox
+yvar,y-axis variable,y축변수 선택:,Select
+reordery,sort by x-axis variable,x축변수순 정렬,Checkbox
+groupvar,group variable,group 변수 선택:,Select
+colorvar,color variable,color 변수 선택:,Select
+fillvar,fill variable,fill 변수 선택:,Select
+alphavar,alpha variable,alpha 변수 선택:,Select
+linetypevar,linetype variable,선모양 변수 선택:,Select
+sizevar,size variable,size 변수 선택:,Select
+shapevar,shape variable,shape 변수 선택:,Select
+sizearea,area proportional to size variables ,크기 면적에 비례,Checkbox
+maxsize,maximal size,최대크기,Numeric
+facetrow,facets by row,가로로 면 분할:,Select
+facetcol,facets by column,세로로 면 분할:,Select
+facetwrap,make facets into 2d,2차원 면분할:,Select
+labeller,labeller,면분할라벨,Select
+facetswitch,facetswitch,면분할switch,Select
+facetscales,facetscale,면분할 scales,Select
+facetspace,facetspace,면분할 space:,Select
+facetwrapncol,number of column(facetwrap),2차원면분할시 열 갯수,Numeric
+strip.bg.blank,strip.bg.blank,면분할라벨배경제거,Checkbox
+barlabel,make bar label auto,label 자동으로 추가,html
+smoothformula2,Enter equation ,(직접입력),Text
+ebauto,"autocalculate sd,se","sd, se 자동계산",html
+contourzvar,z-axis variable,z변수선택,Select
+reglabel,add regression equation,회귀식추가,html
+regtable,add regression table,회귀결과 표 추가,html
+addrorder,add ggplot2 code,ggplot2 명령어 추가,Checkbox
+coord_polar,coord_polar(),원형그래프그리기,Checkbox
+coordflip,coord_flip(),x축과 y축 뒤바꾸기,Checkbox
+coordfixed,coord_fixed(),축 비율 고정하기,Checkbox
+palette,change palette(categorical),Palette 바꾸기(범주형변수),Select
+palettecolor,apply palette to color,color에 적용,Checkbox
+cpalette,change palette(continuous),Palette 바꾸기(연속형변수),Select
+cpalettec,apply palette to color,color에 적용,Checkbox
+legendposition,legend position,범례 위치,Select
+legendreverse,legend reverse order,범례순서 반대로,Checkbox
+title,title of plot,그래프제목,Text
+xlab,x-axis label,x축 제목,Text
+xreverse,x-axis reverse,x축뒤집기,Checkbox
+remove.x.text,remove.x.text,눈금라벨없애기,Checkbox
+log.x,x-axis log scale,x 로그축으로 변경,Checkbox
+ylab,y-axis label,y축 제목,Text
+yreverse,y-axis reverse,y축뒤집기,Checkbox
+remove.y.text,remove.y.text,눈금라벨없애기,Checkbox
+log.y,y-axis log scale,y 로그축으로 변경,Checkbox
+remove.tick,remove ticks,눈금표시없애기,Checkbox
+axis.blank,axis.blank,축제목라벨모두없애기,Checkbox
+xlim,x-axis limits,x축 범위,Text
+ylim,y-axis limits,y축 범위,Text
+fonts,Select font ,폰트종류,Select
+fontsize,Font size,폰트크기,Numeric
+includecode,include code,코드포함,Checkbox
+saveToMultiplot,save to Multiplot,MultiPlot으로 저장,html
+saveToPPTList,save to PPTList,PPT List에 저장,html
+theme,apply theme,테마 변경,Select
+ggthemes,additional theme,추가테마적용,Select
+transparent1,make transparent bg,배경을 투명하게,Checkbox
+transparent2,make transparent bg,배경을 투명하게,Checkbox
+transparent3,make transparent bg,배경을 투명하게,Checkbox
+transparent4,make transparent bg,배경을 투명하게,Checkbox
+inset1choice,select or,viewport 선택,Select
+inset2choice,select or,viewport 선택,Select
+inset3choice,select or,viewport 선택,Select
+inset4choice,select or,viewport 선택,Select
+inset1vp,enter viewport,또는 viewport 입력,Text
+inset2vp,enter viewport,또는 viewport 입력,Text
+inset3vp,enter viewport,또는 viewport 입력,Text
+inset4vp,enter viewport,또는 viewport 입력,Text
+doMultiplot,Make Multiplot,Multiplot 만들기,html
+MultiplotExample,Multiplot Example,Multiplot 예제선택,Select
+includecode3,include code,code 포함,Checkbox
+plot1,<h4>The 1st Plot</h4>,<h4>첫번째 plot</h4>,html2
+plot2,<h4>The 2nd Plot</h4>,<h4>두번째 plot</h4>,html2
+plot3,<h4>The 3rd Plot</h4>,<h4>세번째 plot</h4>,html2
+plot4,<h4>The 4th Plot</h4>,<h4>네번째 plot</h4>,html2
+,,,

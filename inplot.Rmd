@@ -1,0 +1,19 @@
+---
+output: html_document
+---
+```{r, echo=FALSE,message=FALSE,warning=FALSE,fig.height=7,fig.width=7}
+p<-eval(parse(text=input$iplotcode))
+hover_css="r:6px;cursor:pointer;stroke:gold;stroke-width:4px;"
+tooltip_css <- "background-color:white;font-style:italic;padding:10px;border-radius:20px 20px 20px 20px;"
+if(input$iplotmain=="ggPoints") {
+        p<-ggplotly(p)
+} else if(input$iplotmain %in% c("ggChoropleth","ggSpine","ggBar","ggRose","ggBidirectionalBar",
+                                          "PopPyramid","ggDonut","ggPieDonut")){
+        p<-ggiraph(code=print(p),zoom_max=10,tooltip_extra_css = tooltip_css)
+} else p<-ggiraph(code=print(p),zoom_max=10,tooltip_extra_css = tooltip_css,hover_css=hover_css)
+                
+                # htmlwidgets::saveWidget(p,file=file,selfcontained = TRUE)
+                #zip(zipfile=file,files=c("ggplot.pptx"))
+  p             
+        
+```

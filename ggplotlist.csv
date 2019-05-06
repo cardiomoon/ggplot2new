@@ -1,0 +1,3 @@
+"title","rcode"
+"Diamonds Are Forever","ggplot(data=diamonds[sample(nrow(diamonds),1000),],aes(x=carat,y=price,colour=cut))+
+geom_point()"

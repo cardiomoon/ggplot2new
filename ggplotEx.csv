@@ -1,0 +1,272 @@
+tooltip,no,Preprocessing,Code,
+Diamonds Are Forever,21,,"ggplot(data=diamonds[sample(nrow(diamonds),1000),],aes(x=carat,y=price,colour=cut))+ 
+ geom_point()+ 
+ ggtitle('Diamonds Are Forever')",
+Singer’s Height(1),14,,"ggplot(data=singer,aes(x=voice.part,y=height))+
+geom_boxplot()+
+ggtitle(""Singer's Height"")",
+Singer’s Height(2),15,,"ggplot(data=singer,aes(x=voice.part,y=height))+ 
+ geom_violin(fill='lightblue')+ 
+ geom_boxplot(fill='lightgreen',width=0.2)+ 
+ ggtitle(""Singer's Height(2)"")",
+Singer’s Height(3),16,,"ggplot(data=singer,aes(x=height,fill=voice.part))+ 
+ geom_density()+ 
+ facet_grid(voice.part ~ .)+ 
+ ggtitle(""Singer's Height(3)"")",
+Salaries of Professors(1),11,,"ggplot(data=Salaries,aes(x=yrs.since.phd,y=salary,colour=rank,shape=rank))+ 
+ geom_point()+ 
+ ggtitle('Staff Career and Salary')",
+Salaries of Professors(2),12,,"ggplot(data=Salaries,aes(x=rank,y=salary))+ 
+ geom_rug()+ 
+ geom_boxplot(fill='cornflowerblue',alpha=0.5,notch=TRUE)+ 
+ geom_point(position='jitter',colour='blue')+ 
+ ggtitle('교수의 직급과 연봉')",
+Salaries of Professors(3),13,,"ggplot(data=Salaries,aes(x=salary,fill=rank))+ 
+ geom_density(alpha=0.3)+ 
+ ggtitle('교수의 직급과 연봉')",
+Salaries of Professors(4),17,,"ggplot(data=Salaries,aes(x=yrs.since.phd,y=salary,colour=rank,shape=sex))+ 
+ geom_point()+ 
+ ggtitle('Career and salary ')",
+Korean Population Map,18,kpmap=readRDS('kpopmap.rds') ,"ggplot(data=kpmap,aes(x=long,y=lat,group=group,fill=외국인_계_명))+ 
+ geom_polygon(colour='black',size=0.2)+ 
+ coord_map()+ 
+ scale_fill_gradientn(colours=c('white','orange','red'))+ 
+ ggtitle('Population distribution in South Korea')",
+US Murder Rate by State,33,"crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests);
+states_map <- map_data('state')","ggplot(data=crimes,)+ 
+ geom_map(aes(map_id=state,fill=Murder),map=states_map)+ 
+ coord_map(projection='polyconic')+ 
+expand_limits(x=states_map$long)+ 
+expand_limits(y=states_map$lat)",
+US Crime Rates,34,"crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests);
+crimesm <- melt(crimes, id = 1);
+states_map <- map_data('state') ","ggplot(data=crimesm,)+ 
+ geom_map(aes(map_id=state,fill=value),map=states_map,colour='grey50',size=0.1)+ 
+ coord_map()+ 
+ scale_fill_gradientn(colours=c('white','green','blue','red'))+ 
+ facet_wrap(~variable)+ 
+expand_limits(x=states_map$long)+ 
+expand_limits(y=states_map$lat)",
+Area Plot ,20,,"ggplot(data=uspopage,aes(x=Year,y=Thousands,fill=AgeGroup))+ 
+ geom_area(alpha=0.4)+ 
+ geom_line(position='stack',size=0.2)+ 
+ scale_fill_brewer(palette='Blues')",
+Polar Plot,22,,"ggplot(data=wind,aes(x=DirCat,fill=SpeedCat))+ 
+ geom_histogram(colour='black')+ 
+ scale_fill_brewer(palette='Blues')+ 
+ coord_polar()+ 
+ guides(fill=guide_legend(reverse=TRUE))+ 
+scale_x_continuous(limits=c(0,360),breaks=seq(0,360,by=45))",
+Horizontal Bar plot,28,"taco=read.csv('taco_results.csv');
+filling.results <- taco %>%
+group_by(Filling) %>%
+summarise(Rating = mean(Rating)) ","ggplot(data=filling.results,aes(x=Filling,y=Rating,fill=Filling))+ 
+ geom_bar(stat='identity')+ 
+ coord_flip(ylim=c(0.8,0.875))+ 
+ theme_bw()+ 
+ theme(legend.position='none')",
+Heat map,23,taco=read.csv('taco_results.csv') ,"ggplot(data=taco,aes(x=AgeGroup,y=Filling,fill=Rating))+ 
+ geom_tile(colour='white')+ 
+ scale_fill_gradientn(colours=c('white','steelblue'))+ 
+ facet_grid(. ~ ShellType)+ 
+ theme_bw()",
+Horizontal boxplot,24,taco=read.csv('taco_results.csv') ,"ggplot(data=taco,aes(x=Filling,y=Rating,fill=Filling))+ 
+ geom_boxplot(alpha=0.5)+ 
+ facet_grid(. ~ ShellType)+ 
+ coord_flip()+ 
+ theme_bw()+ 
+ theme(legend.position='none')",
+HSD plot,27,"taco=read.csv('taco_results.csv');
+taco.anova <- aov(Rating~ShellType*AgeGroup,data = taco);
+taco.hsd <- data.frame(TukeyHSD(taco.anova,'AgeGroup', conf.level=.95)$AgeGroup);
+taco.hsd$Comparison <- row.names(taco.hsd) ","ggplot(data=taco.hsd,aes(x=Comparison,y=diff,colour=Comparison))+ 
+ geom_errorbar(aes(ymin=lwr,ymax=upr),size=1,width=0.2)+ 
+ geom_point(size=4)+ 
+ coord_flip()+ 
+ theme(legend.position='none')+ 
+ ylab('Difference in Mean Rating by Age Group')",
+Logistic Regression*,40,"b<-biopsy;
+b$malig=ifelse(b$class=='malignant',1,0)","ggplot(data=b,aes(x=V1,y=malig))+ 
+ stat_smooth(method=glm,method.args=list(family='binomial'))+ 
+ geom_jitter(position=position_jitter(width=0.3,height=0.06),alpha=0.5,size=1.5,shape=21)+ 
+ ggtitle('로지스틱 회귀분석')",
+Cleveland Dot Plot(1),29,"tophit=tophitters2001[1:25,] ","ggplot(data=tophit,aes(x=avg,y=name))+ 
+ geom_segment(aes(xend=0,yend=name))+ 
+ geom_point(size=3)",
+Cleveland Dot Plot(2),30,"tophit=tophitters2001[1:25,] ","ggplot(data=tophit,aes(x=avg,y=reorder(name,avg),colour=name))+ 
+ geom_segment(aes(xend=0,yend=name))+ 
+ geom_point(size=3)+ 
+ theme_bw()+ 
+ theme(legend.position='none')",
+Cleveland Dot Plot(3),31,"tophit=tophitters2001[1:25,] ","ggplot(data=tophit,aes(x=avg,y=reorder(name,avg),colour=lg))+ 
+ geom_segment(aes(xend=0.31,yend=name))+ 
+ geom_point(size=3)+ 
+ facet_grid(lg ~ .,scales='free_y',space='free_y')",
+Maunga Whau Volcano,32,"volcano3d=melt(volcano);
+names(volcano3d)<-c('x','y','z') ","ggplot(data=volcano3d,aes(x=x,y=y))+ 
+ stat_contour(aes(z=z),binwidth=2,colour='grey50')+ 
+stat_contour(aes(z=z),binwidth = 10, size = 1)",
+Barplot with Errorbar ,25,"df=summarySE(Salaries,'salary',c('sex','rank','rank'),conf.interval=0.95) ","ggplot(data=df,aes(x=rank,y=salary,group=sex,colour=sex,fill=sex))+ 
+ geom_bar(stat='identity',position='dodge')+ 
+ geom_errorbar(aes(ymin=salary-se,ymax=salary+se),colour='black',width=0.2,position=position_dodge(0.9))",
+Line plot with Errorbar,26,"df=summarySE(Salaries,'salary',c('sex','rank','rank'),conf.interval=0.95) ","ggplot(data=df,aes(x=sex,y=salary,group=rank,colour=rank,fill=rank))+ 
+ geom_line(position=position_dodge(0.3))+ 
+ geom_errorbar(aes(ymin=salary-se,ymax=salary+se),width=0.2,position=position_dodge(0.3))+ 
+ geom_point(position=position_dodge(0.3))",
+overlapped densities,10,,"ggplot(data=acs,aes(x=age,fill=sex))+ 
+ geom_density(alpha=0.4)",
+Bubble plot,1,,"ggplot(data=subset(countries,Year==2009 & healthexp>2000),aes(x=healthexp,y=infmortality,size=GDP))+ 
+scale_size_area(max_size=15)+ 
+ geom_point(fill='cornsilk',shape=21)",
+histogram with density,2,,"ggplot(data=faithful,aes(x=waiting,y=..density..))+ 
+ geom_histogram(colour='grey60',fill='cornsilk')+ 
+ geom_density(colour='red')+ 
+xlim(35,105)",
+violin plot with boxplot,3,,"ggplot(data=acs,aes(x=Dx,y=age,fill=Dx))+ 
+ geom_violin(scale='count',trim=FALSE)+ 
+ geom_boxplot(fill='black',width=0.1,alpha=0.6)+ 
+ stat_summary(fill='white',geom='point',fun.y=median,shape=21,size=3.5)+ 
+ scale_fill_brewer(palette='Set2')",
+dot plot with box plot,4,,"ggplot(data=heightweight,aes(x=sex,y=heightIn,fill=sex))+ 
+ geom_boxplot(fill='white',width=0.4)+ 
+ geom_dotplot(stackdir='center',binaxis='y',alpha=0.9,binwidth=0.5)",
+stat_density2D(1),5,,"ggplot(data=faithful,aes(x=eruptions,y=waiting))+ 
+ stat_density2d(aes(colour=..level..),alpha=1)+ 
+ geom_point()",
+stat_density2D(2),6,,"ggplot(data=faithful,aes(x=eruptions,y=waiting))+ 
+ stat_density2d(aes(alpha=..density..),geom='tile',contour=FALSE)+ 
+ geom_point()",
+stat_density2D(3),7,,"ggplot(data=faithful,aes(x=eruptions,y=waiting))+ 
+ stat_density2d(aes(alpha=..density..),geom='tile',contour=FALSE)+ 
+ geom_point()",
+Highlighting an item,8,"pg <- PlantGrowth;
+    pg$hl<-'no';
+    pg$hl[pg$group=='trt2']<-'yes' ","ggplot(data=pg,aes(x=group,y=weight,fill=hl))+ 
+ geom_boxplot()+ 
+scale_fill_manual(values=c('grey85','#FFDDCC'),guide=FALSE)+ 
+ ggtitle('항목 강조를 위한 전처리')",
+Adding annotation to each facets,9,"mpg2<-mpg;
+levels(mpg2$drv)<-c('4WD','Front','Rear');
+lm_labels <- function(dat) {
+mod <- lm(hwy ~ displ, data=dat);
+formula <- sprintf('italic(y) == %.2f %+.2f * italic(x)',
+round(coef(mod)[1], 2), round(coef(mod)[2], 2));
+                    r <- cor(dat$displ, dat$hwy);
+r2 <- sprintf('italic(R^2) == %.2f', r^2);
+data.frame(formula=formula, r2=r2, stringsAsFactors=FALSE)
+};
+labels <- ddply(mpg2, 'drv', lm_labels) ","
+ggplot(data=mpg2,aes(x=displ,y=hwy,fill=drv))+ 
+ stat_smooth(method=lm)+ 
+ geom_point(size=3,shape=21)+ 
+ facet_grid(. ~ drv)+ 
+geom_text(x=3, y=40, family='Times',fontface='italic',aes(label=formula), data=labels, parse=TRUE, hjust=0) +
+                    geom_text(x=3.5, y=35, family='Times',fontface='italic',aes(label=r2), data=labels, parse=TRUE, hjust=0)+ 
+ ggtitle('Adding annotation to each facets')+ 
+ theme_grey(base_size=14)+ 
+ theme(legend.position='top')+ 
+ xlab('displacement')+ 
+ ylab('highway mpg')",
+Adding tables to the scatterplot,46,"require(gridExtra);
+top10=head(mtcars[order(mtcars$mpg,decreasing=TRUE),c('mpg','wt')],10);
+table_grob=tableGrob(top10) ","ggplot(data=mtcars,aes(x=wt,y=mpg))+ 
+ geom_point()+ 
+ annotate(geom='text',x=8.2,y=32.5,label='Top 10 mpg cars')+ 
+ annotation_custom(grob=table_grob,xmin=6)+ 
+expand_limits(xend=10)+ 
+ theme_grey(base_size=14)",
+adding regression result table to scatterplot,47,"res=lm2table('mtcars','wt','mpg');
+table_grob=tableGrob(res)","ggplot(data=mtcars,aes(x=wt,y=mpg))+ 
+ stat_smooth(method=lm)+ 
+ geom_point()+ 
+ annotate(geom='text',x=4.5,y=30,size=7,label='y = -5.3x + 37.3 (p < 0.001)',family='Times',fontface='italic')+ 
+ annotation_custom(grob=table_grob,xmax=5,ymax=12)+ 
+expand_limits(y=0)",
+geom_label demo,48,"grid <- expand.grid(
+x = seq(-pi, pi, length = 50),
+y = seq(-pi, pi, length = 50)
+) %>% mutate(r = x ^ 2 + y ^ 2, z = cos(r ^ 2) * exp(-r / 6));
+Center='Center' ","
+ggplot(data=grid,aes(x=x,y=y,fill=z))+ 
+ geom_raster()+ 
+ geom_label(data=data.frame(x=0,y=0),aes(label=Center,y=y,x=x),inherit.aes=FALSE)+ 
+ theme_grey(base_size=14)+ 
+ theme(legend.position='none')",
+labeller_example(1),49,"data <- mtcars %>% 
+  mutate(
+                    Logarithmic = log(mpg),
+                    Inverse = 1 / mpg,
+                    Cubic = mpg ^ 3,
+                    Original = mpg
+    ) %>% tidyr::gather(transformation, mpg2, Logarithmic:Original) 
+","ggplot(data=data,aes(x=mpg2,y=disp))+ 
+ geom_point()+ 
+ facet_wrap(~transformation,switch='x',scales='free')+ 
+ theme_grey(base_size=14)+ 
+ theme(strip.background=element_blank())",
+labeller_example(2),50,"my_labeller <- label_bquote(
+rows = .(am) / alpha,
+cols = .(vs) ^ .(cyl)
+)","ggplot(data=mtcars,aes(x=wt,y=mpg))+ 
+ geom_point()+ 
+facet_grid(am ~ vs + cyl, labeller = my_labeller)",
+geom_label,51,,"ggplot(data=mtcars,aes(x=wt,y=mpg))+ 
+ geom_text(aes(label=rownames(mtcars)),nudge_y=0.7)+ 
+ geom_point()+ 
+ theme_grey(base_size=14)",
+geom_label(check_overalp=TRUE),52,,"ggplot(data=mtcars,aes(x=wt,y=mpg))+ 
+ geom_text(aes(label=rownames(mtcars)),nudge_y=0.7,check_overlap=TRUE)+ 
+ geom_point()+ 
+ theme_grey(base_size=14)",
+geom_count,53,,"ggplot(data=mpg,aes(x=cty,y=hwy))+ 
+ geom_count()+ 
+ theme_grey(base_size=14)",
+시도별 결핵환자 발생추이,36,tbc<-readRDS('data/tbc_long.RDS') ,"ggplot(data=tbc,aes(x=year,y=신환수,group=시도별,fill=시도별))+ 
+ geom_area(alpha=0.4)+ 
+ geom_line(position='stack')+ 
+ annotate(geom='segment',x=3,xend=11,y=31000,yend=40000,colour='red',size=2,alpha=0.6,arrow=arrow())+ 
+ guides(fill=guide_legend(reverse=TRUE))+ 
+ ggtitle('시도별 결핵 신환 발생 추이')+ 
+ theme_grey(base_size=14)",
+시도별 결핵 신환발생 분포도,37,"tbc<-readRDS('data/tbc_long4.RDS');
+map=kormap1","ggplot(data=tbc,aes(fill=신환수))+ 
+ geom_map(aes(map_id=code),map=map,colour='black',size=0.1)+ 
+ coord_map()+ 
+ scale_fill_gradientn(colours=c('white','red'))+ 
+ facet_wrap(~year)+ 
+expand_limits(x=map$long)+ 
+expand_limits(y=map$lat)+ 
+ ggtitle('시도별 결핵 신환 발생 분포도')+ 
+ theme_axis_blank()",
+시도별 결핵 발병률 추이,38,tbc<-readRDS('data/tbcinci.RDS') ,"ggplot(data=tbc,aes(x=년도,y=발병률,group=시도별,colour=시도별))+ 
+ geom_line()+ 
+ geom_text(data=tbc[tbc$년도==2005,],aes(label=시도별),hjust=1.2,check_overlap=TRUE)+ 
+ geom_point()+ 
+geom_text(data=tbc[tbc$년도==2010,],aes(label=시도별),family='Helvetica',hjust=-0.2)+ 
+ ggtitle('시도별 결핵 발병률 추이(2005-2010)')+ 
+ theme_grey(base_size=14)+ 
+ theme(legend.position='none')",
+시도별 결핵 발병률분포도,39,"tbc<-readRDS('data/tbcinci.RDS');
+map=kormap1","ggplot(data=tbc,aes(fill=발병률))+ 
+ geom_map(aes(map_id=code),map=map,colour='black',size=0.1)+ 
+ coord_map()+ 
+ scale_fill_gradientn(colours=c('white','red'))+ 
+ facet_wrap(~년도)+ 
+expand_limits(x=map$long)+ 
+expand_limits(y=map$lat)+ 
+ ggtitle('시도별 결핵 발병률 분포도')+ 
+ theme(legend.position='top')+ 
+ theme_axis_blank()",
+서울시 교통 돌발상황 위치,41,traffic=read.csv('traffic.csv') ," qmap( location=c(126.977969,37.566535),zoom=11,maptype='roadmap',legend='topleft' )+ 
+ geom_point(data=traffic,aes(x=start.pos.x,y=start.pos.y,colour=info.tit),size=4,alpha=0.7)+ 
+ ggtitle('서울시 교통 돌발상황위치')+ 
+ theme_grey(base_size=14)",
+서울시 교통 돌발상황 레벨플롯,43,traffic=read.csv('traffic.csv') ,"qmap( location=c(126.977969,37.566535),zoom=11,legend='topleft' )+ 
+ stat_density2d(data=traffic,aes(x=start.pos.x,y=start.pos.y,fill=..level..),geom='polygon',alpha=0.5)+ 
+ ggtitle('서울시 교통 돌발상황 레벨플롯')+ 
+ theme_grey(base_size=14)",
+서울시 강동구 공영주차장 위치,44,"dat=read.csv('data/서울_강동구_공영주차장_위경도.csv',fileEncoding='euc-kr') "," qmap( location=c(127.150040,37.5502209),zoom=14,maptype='roadmap' )+ 
+ geom_text(data=dat,aes(label=주차장명,x=LON,y=LAT+0.001),vjust=0,size=3,check_overlap=TRUE)+ 
+ geom_point(data=dat,aes(x=LON,y=LAT),colour='red',size=3,alpha=0.6)+ 
+ ggtitle('서울시 강동구 공영주차장 위치')+ 
+ theme_grey(base_size=14)",
