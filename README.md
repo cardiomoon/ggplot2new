@@ -8,7 +8,7 @@ introduce you my shiny app-`Learn ggplots`.
 Where can I buy a book?
 -----------------------
 
-[mybook.jpg](https://images.springer.com/sgw/books/medium/9783319530185.jpg)
+![](https://github.com/cardiomoon/ggplot2new/blob/master/www/mybook.jpeg?raw=true)
 
 You can buy my book at
 [Springer.com](http://www.springer.com/us/book/9783319530185#otherversion=9783319530192)
