@@ -1,5 +1,5 @@
 require(ggplot2)
-require(moonBook2)
+# require(moonBook2)
 require(png)
 
 makeThumb <- function(file, height, width) {
