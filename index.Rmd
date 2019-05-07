@@ -1,8 +1,6 @@
 ---
 title: "Learn ggplot2 using Shiny App"
-output:
-   md_document:
-    variant: markdown_github
+output: html_document
 ---
 
 ## Welcome to Learn ggplot2 using Shiny App!
