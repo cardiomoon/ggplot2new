@@ -1,0 +1,15 @@
+CHANGES
+
+0.5.1 (April 30, 2015)
+- Default host is now 0.0.0.0 (wildcard)
+- New -host and -port flags to override default host and port
+- core: Support for binding to 0.0.0.0
+- core: Graceful error handling during heavy load; proper error responses
+- errors: Fixed file path handling
+- errors: Fixed panic due to nil Log file
+- fastcgi: Support for index files
+- fastcgi: Fix for handling errors that come from responder
+
+
+0.5.0 (April 28, 2015)
+- Initial release

@@ -856,7 +856,7 @@ shinyUI(fluidPage(
                        hr(),
                        fluidRow(
                          column(2,downloadButton("downloadPlot","download fig")),
-                         column(2,downloadButton("downloadPDF","download PDF")),
+                         #column(2,downloadButton("downloadPDF","download PDF")),
                          column(2,downloadButton("downloadPPT","download PPT"),
                                 checkboxInput("includecode","code 포함",value=FALSE)),
                          column(2,actionButton("saveToMultiplot","MultiPlot으로 저장")),
@@ -938,7 +938,7 @@ tabPanel("MultiPlot",
                                 choices=c("None"=0,"Upper + RLQ,LLQ"=1,"Left + RUQ,RLQ"=2,"Full + RLQs,LUQs"=3,
                                           "Four plots(2 by 2)"=4),selected=0),
               downloadButton("downloadMultiplot","download Multiplot"),
-              downloadButton("downloadMultiplotpdf","download pdf"),
+              #downloadButton("downloadMultiplotpdf","download pdf"),
               downloadButton("downloadPPT2","download PPT")
            ),
            
@@ -1343,7 +1343,7 @@ tabPanel("Interactive plot",
          # ),
          fluidRow(
          column(2,downloadButton("downloadPlot4","download fig")),
-         column(2,downloadButton("downloadPDF4","download PDF")),
+         #column(2,downloadButton("downloadPDF4","download PDF")),
          column(2,downloadButton("downloadPPT4","download PPT")),
          column(2,downloadButton("downloadReport","download HTML")),
          column(2,actionButton("saveToMultiplot4","save to MultiPlot")),

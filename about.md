@@ -3,23 +3,30 @@
 [![alt text](http://file.mdtoday.co.kr/news/2015/0515/20150515141507_555580db9d331_1.jpg)](http://www.doctorsnews.co.kr/news/articleView.html?idxno=103653)
 [![alt text](http://image.aladin.co.kr/product/5142/44/cover/8955661797_1.jpg)](http://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8955661797)
 [![alt text](http://image.aladin.co.kr/product/6671/48/cover/8955661851_1.jpg)](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=66714863)
+[![](https://github.com/cardiomoon/ggplot2new/blob/master/www/mybook.jpeg?raw=true)](http://www.springer.com/us/book/9783319530185#otherversion=9783319530192)
 
-## 이용 가능한 서버 안내
+## 앱을 이용할 수 있는 주소 
 
-현재 6개의 서버가 운영되고 있습니다. 가까운 서버를 선택하세요
-
-App    | Sinapore,SG|Frankfurt,DE|London,UK|Fremont,CA|Dallas,TX|Newark,NJ|
--------|------------|------------|---------|----------|---------|---------|
-ggplot2  |  [ggplot2](http://45.118.135.113:3838/ggplot2)| [ggplot2](http://85.90.244.159:3838/ggplot2)|[gplot2](http://88.80.188.114:3838/ggplot2)|[ggplot2](http://198.74.50.54:3838/ggplot2)|[ggplot2](http://23.239.25.35:3838/gplot2)|[ggplot2](http://45.79.141.61:3838/ggplot2)
+다음 주소에서 이 앱을 이용하실 수 있습니다.
+https://cardiomoon.shinyapps.io/ggplot2new
 
 ## web-r.org 에서 만든 다른 앱 소개
 
-제가 만든 다른 앱들도 웹에서 이용하실 수 있습니다. 메타 분석과 구조방정식 모델링 앱도 살펴보세요.
+제가 만든 다른 앱들도 웹에서 이용하실 수 있습니다. 다음 주소에서 웹에서 하는 R통계분석 엡을 이용하실 수 있습니다.
 
-App    | Sinapore,SG|Frankfurt,DE|London,UK|Fremont,CA|Dallas,TX|Newark,NJ|
--------|------------|------------|---------|----------|---------|---------|
-r-sem  |  [r-sem](http://45.118.135.113:3838/r-sem)| [r-sem](http://85.90.244.159:3838/r-sem)|[r-sem](http://88.80.188.114:3838/r-sem)|[r-sem](http://198.74.50.54:3838/r-sem)|[r-sem](http://23.239.25.35:3838/r-sem)|[r-sem](http://45.79.141.61:3838/r-sem)
-r-meta  | [r-meta](http://45.118.135.113:3838/meta)|[r-meta](http://85.90.244.159:3838/meta)|[r-meta](http://88.80.188.114:3838/meta)|[r-meta](http://198.74.50.54:3838/meta)|[r-meta](http://23.239.25.35:3838/meta)|[r-meat](http://45.79.141.61:3838/meta)
+https://cardiomoon.shinyapps.io/reg1
+
+## 이 앱을 내 컴퓨터에서 실행할 수 있나요?
+
+R과 Rstudio를 설치하시고 shiny 퍄키지를 설치하신 후 다음을 실행하시면 됩니다. 물론 필요한 다른 R 패키지들을 설치하셔야 합니다. 
+
+shiny::runGitHub("cardiomoon/ggplot2new")
+
+
+##  소스화일을 다운로드 받을 수 있나요?
+
+이 앱의 소스파일은 다음 주소에서 다운로드 받으실 수 있습니다.
+https://github.com/cardiomoon/ggplot2new.
 
 
 ## 감사의 글

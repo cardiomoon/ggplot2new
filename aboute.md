@@ -12,28 +12,25 @@ This app is for reseachers, students or professors who want to learn how to make
 All you need for this app is a modern web browser supporting HTML5(chrome, opera, safari and ...). `No R installation` is required. `No LaTex` installation is required. This app is independent of operating system of your computer. Windows, Mac and Linux PCs are all compatible. You can use even `a tablet PC` or `a smartphone`.
 
 
-## Which Sever is available
+## Where can I use this app ?
 
-At present, I maintained six servers. You can choose any server among followings. Please find the nearest server and enjoy the app.
+You can use this app at https://cardiomoon.shinyapps.io/ggplot2new
 
-App    | Sinapore,SG|Frankfurt,DE|London,UK|Fremont,CA|Dallas,TX|Newark,NJ|
--------|------------|------------|---------|----------|---------|---------|
-ggplot2  |  [ggplot2](http://45.118.135.113:3838/ggplot2)| [ggplot2](http://85.90.244.159:3838/ggplot2)|[gplot2](http://88.80.188.114:3838/ggplot2)|[ggplot2](http://198.74.50.54:3838/ggplot2)|[ggplot2](http://23.239.25.35:3838/gplot2)|[ggplot2](http://45.79.141.61:3838/ggplot2)
+## Can I use this app in my computer ?
+
+Yes. You can run this app in your computer. You need the R and RStudio installed in your computer. Install the shiny package and run the followong R code.
+
+shiny::runGitHub("cardiomoon/ggplot2new")
+
+
+##  Where can I download the the source file
+
+You can download the source file at my GitHub Page. Please visit https://github.com/cardiomoon/ggplot2new.
 
 ## Othe Apps created by web-r.org
 
-You can find other useful apps created by me. One of these, you can perform `meta-analysis` by the r-meta app. You can perform `structural equation modeling` by r-sem app
+You can find other useful apps created by me. You can use "Web-based analysis using R" at https://cardiomoon.shinyapps.io/reg1
 
-
-App    | Sinapore,SG|Frankfurt,DE|London,UK|Fremont,CA|Dallas,TX|Newark,NJ|
--------|------------|------------|---------|----------|---------|---------|
-r-sem  |  [r-sem](http://45.118.135.113:3838/r-sem)| [r-sem](http://85.90.244.159:3838/r-sem)|[r-sem](http://88.80.188.114:3838/r-sem)|[r-sem](http://198.74.50.54:3838/r-sem)|[r-sem](http://23.239.25.35:3838/r-sem)|[r-sem](http://45.79.141.61:3838/r-sem)
-r-meta  | [r-meta](http://45.118.135.113:3838/meta)|[r-meta](http://85.90.244.159:3838/meta)|[r-meta](http://88.80.188.114:3838/meta)|[r-meta](http://198.74.50.54:3838/meta)|[r-meta](http://23.239.25.35:3838/meta)|[r-meat](http://45.79.141.61:3838/meta)
-
-
-## Coming soon
- 
-Other apps including  `web-based analysis using R` will be available soon. 
 
 ## About the Author 
 
@@ -42,6 +39,7 @@ My name is Keon-Woong Moon. I am a Professor of Cardiology at Catholic Universit
 [![alt text](http://file.mdtoday.co.kr/news/2015/0515/20150515141507_555580db9d331_1.jpg)](http://www.doctorsnews.co.kr/news/articleView.html?idxno=103653)
 [![alt text](http://image.aladin.co.kr/product/5142/44/cover/8955661797_1.jpg)](http://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8955661797)
 [![alt text](http://image.aladin.co.kr/product/6671/48/cover/8955661851_1.jpg)](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=66714863)
+[![](https://github.com/cardiomoon/ggplot2new/blob/master/www/mybook.jpeg?raw=true)](http://www.springer.com/us/book/9783319530185#otherversion=9783319530192)
 
 
 I have developed three R packages available at CRAN site.
@@ -58,10 +56,6 @@ R is free software and comes with ABSOLUTELY NO WARRANTY. My shiny app is also f
 ## Acknowledgements
 
 No app is the product of a single person. There are many people who helped make this app possible, directly and indirectly. I'd like to thank the R community for creating R. Thanks to RStudio for creating RStudio and Shiny.
-
-
-[![alt text](http://akamaicovers.oreilly.com/images/0636920023135/cat.gif)](http://shop.oreilly.com/product/0636920023135.do)
-[![alt text](9780387981406.jpg)](http://www.springer.com/us/book/9780387981406)
 
 Thanks to Hadley Wickham who developed R package [`ggplot2`](https://cran.r-project.org/web/packages/ggplot2/index.html). Thanks to Winston Chang who wrote the book [`R graphics cookbook`](http://shop.oreilly.com/product/0636920023135.do) and developed R package [`gcookbook`](https://cran.r-project.org/web/packages/gcookbook/index.html). I was inspired by his book. For Koreans I strongly recommend my book "web-based anlaysis with R".
 

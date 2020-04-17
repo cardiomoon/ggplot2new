@@ -3032,14 +3032,8 @@ output$downloadPPT = downloadHandler(
     on.exit(setwd(owd))
 
     
-    mydoc<-read_pptx() %>% add_text(title="ggplot") %>% 
-      add_ggplot2(code=input$rorder) 
-    
-    if(input$includecode) {
-       mydoc<- mydoc %>% add_text(title="",code=input$rorder,echo=TRUE)
-    }
-    
-    mydoc %>% print(target=file)
+    p<-eval(parse(text=input$rorder))
+    plot2pptx(p,target=file)
     
   },
   contentType="application/vnd-ms-powerpoint"
@@ -3061,15 +3055,19 @@ output$downloadPPT3 = downloadHandler(
     
     mydoc=read_pptx()
     
+    no=1
     for(i in 1:10) {
       temp=input[[mylist[i]]]
       if(temp!="") {
           
-          mydoc=mydoc %>% add_text(title="") %>%
-            add_ggplot2(code=temp)
-          if(input$includecode3) {
-            mydoc=mydoc %>% add_text(title="",code=temp,echo=TRUE)
+          p<-eval(parse(text=temp))
+          if(no==1) {
+            plot2pptx(p,file)
+          } else{
+            plot2pptx(p,file,append=TRUE)
+            no=no+1
           }
+          
       }
     }  
     print(mydoc,target=file)
@@ -4547,8 +4545,9 @@ output$downloadPPT4 = downloadHandler(
                 owd <- setwd(tempdir())
                 on.exit(setwd(owd))
                 
-                read_pptx() %>% add_text(title="ggplot") %>% 
-                  add_ggplot2(code=input$iplotcode) %>% print(target=file)
+                p<-eval(parse(text=input$iplotcode))
+                plot2pptx(p,target=file)
+               
                 
                 #zip(zipfile=file,files=c("ggplot.pptx"))
         },

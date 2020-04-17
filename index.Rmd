@@ -11,7 +11,7 @@ Hello ! My name is Keon-Woong Moon. I am a Professor of Cardiology at Catholic U
 
 ![](https://github.com/cardiomoon/ggplot2new/blob/master/www/mybook.jpeg?raw=true)
 
-You can buy my book at [Springer.com](http://www.springer.com/us/book/9783319530185#otherversion=9783319530192) or [amazon]().
+You can buy my book at [Springer.com](http://www.springer.com/us/book/9783319530185#otherversion=9783319530192) or amazon.
 
 ## What this app aims
 
@@ -21,27 +21,24 @@ This app is for reseachers, students or professors who want to learn how to make
 
 All you need for this app is a modern web browser supporting HTML5(chrome, opera, safari and …). `No R installation` is required.  `No LaTex` installation is required. This app is independent of operating system of your computer. Windows, Mac and Linux PCs are all compatible. You can use even a `tablet PC` or a `smartphone`.
 
-## Which Sever is available
+## Where can I use this app ?
 
-At present, I maintained three servers. You can choose any server among followings. Please find the nearest server and enjoy the app.
+You can use this app at https://cardiomoon.shinyapps.io/ggplot2new
 
-App  |	Tokyo,Japan	| Dallas,TX	|Newark,NJ
------|--------------|-----------|----------
-ggplot2 |[ggplot2](http://r-ggplot2.com:3838/ggplot2new)|[ggplot2](http://23.239.25.35:3838/ggplot2new)|[ggplot2](http://45.79.141.61:3838/ggplot2new)
+## Can I use this app in my computer ?
 
+Yes. You can run this app in your computer. You need the R and RStudio installed in your computer. Install the shiny package and run the followong R code.
 
-## Can I run this app in my computer?
-
-Yes. You can run this app in your computer. You need the R and RStudio installed in your computer.
-Install the shiny package and run the followong R code.
-
->  shiny::runGitHub("cardiomoon/ggplot2new")
+shiny::runGitHub("cardiomoon/ggplot2new")
 
 
-## Where can I download the the source file
+##  Where can I download the the source file
 
 You can download the source file at my GitHub Page. Please visit https://github.com/cardiomoon/ggplot2new.
 
+## Othe Apps created by web-r.org
+
+You can find other useful apps created by me. You can use "Web-based analysis using R" at https://cardiomoon.shinyapps.io/reg1
 
 ## Warranty
 
